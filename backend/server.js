@@ -4,32 +4,35 @@ const mongoose = require("mongoose");
 const passportConfig = require("./lib/passportConfig");
 const cors = require("cors");
 const fs = require("fs");
+const path = require("path");
 
 // MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/jobPortal", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  })
-  .then((res) => console.log("Connected to DB"))
-  .catch((err) => console.log(err));
+    .connect(
+        "mongodb+srv://avinashprajapati:pa9821105992@jobportal.a8dlmmt.mongodb.net/test",
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false,
+        }
+    )
+    .then((res) => console.log("Connected to DB"))
+    .catch((err) => console.log(err));
 
 // initialising directories
 if (!fs.existsSync("./public")) {
-  fs.mkdirSync("./public");
+    fs.mkdirSync("./public");
 }
 if (!fs.existsSync("./public/resume")) {
-  fs.mkdirSync("./public/resume");
+    fs.mkdirSync("./public/resume");
 }
 if (!fs.existsSync("./public/profile")) {
-  fs.mkdirSync("./public/profile");
+    fs.mkdirSync("./public/profile");
 }
 
 const app = express();
 const port = 4444;
-
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -45,5 +48,5 @@ app.use("/upload", require("./routes/uploadRoutes"));
 app.use("/host", require("./routes/downloadRoutes"));
 
 app.listen(port, () => {
-  console.log(`Server started on port ${port}!`);
+    console.log(`Server started on port ${port}!`);
 });
