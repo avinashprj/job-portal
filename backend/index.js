@@ -42,7 +42,7 @@ app.use(express.json());
 app.use(passportConfig.initialize());
 
 // Routing
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
     res.send("root");
 });
 app.use("/auth", require("./routes/authRoutes"));
