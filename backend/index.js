@@ -43,8 +43,10 @@ app.use(passportConfig.initialize());
 
 // Routing
 app.get("/", (req, res) => {
-    res.send("root");
+    const auth = require("./routes/authRoutes");
+    res.status(201).send(auth);
 });
+
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/api", require("./routes/apiRoutes"));
 app.use("/upload", require("./routes/uploadRoutes"));
