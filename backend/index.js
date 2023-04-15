@@ -42,9 +42,11 @@ app.use(express.json());
 app.use(passportConfig.initialize());
 
 // Routing
+const auth = require("./routes/authRoutes");
+console.log(auth, "asfdafs");
+
 app.get("/", (req, res) => {
-    const auth = require("./routes/authRoutes");
-    res.status(201).send(auth);
+    res.send("root");
 });
 
 app.use("/auth", require("./routes/authRoutes"));
