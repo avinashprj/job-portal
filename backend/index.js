@@ -43,14 +43,16 @@ app.use(passportConfig.initialize());
 
 // Routing
 const auth = require("./routes/authRoutes");
+const apiRoutes = require("./routes/apiRoutes");
+
 console.log(auth, "asfdafs");
 
 app.get("/", (req, res) => {
     res.send("root");
 });
 
-app.use("/auth", require("./routes/authRoutes"));
-app.use("/api", require("./routes/apiRoutes"));
+app.use("/auth", auth);
+app.use("/api", apiRoutes);
 app.use("/upload", require("./routes/uploadRoutes"));
 app.use("/host", require("./routes/downloadRoutes"));
 
