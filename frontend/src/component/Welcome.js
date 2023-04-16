@@ -649,7 +649,7 @@ const Welcome = (props) => {
                         </div>
 
                         <div className="mt-4 text-xs font-bold text-gray-500">
-                            © 2020 Job Portal | MIT License
+                            © 2023 Online Job Portal
                         </div>
                     </div>
                 </footer>
