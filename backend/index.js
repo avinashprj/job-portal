@@ -9,7 +9,7 @@ const path = require("path");
 // MongoDB
 mongoose
     .connect(
-        "mongodb+srv://avinashprajapati:pa9821105992@jobportal.a8dlmmt.mongodb.net/test",
+        "mongodb+srv://rohanshinde029:rohan@123@cluster0.tzgcjc2.mongodb.net/test",
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,
