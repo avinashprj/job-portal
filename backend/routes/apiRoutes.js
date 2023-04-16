@@ -13,8 +13,8 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
     service: "SendinBlue", // no need to set host or port etc.
     auth: {
-        user: "avipj007@gmail.com",
-        pass: "h1wL08jtZ7JyCIMT",
+        user: "rohanshinde029@gmail.com",
+        pass: "PJ5bOcy6BZIEzKwF",
     },
 });
 const router = express.Router();
@@ -804,17 +804,13 @@ router.put("/applications/:id", jwtAuth, async (req, res) => {
                                                     )
                                                         .then(() => {
                                                             const mailData = {
-                                                                from: "avipj007@gmail.com", // sender address
-                                                                to: "avinashprajapati914@gmail.com", // list of receivers
+                                                                from: "rohanshinde029@gmail.com", // sender address
+                                                                to: applicant.email, // list of receivers
                                                                 subject:
                                                                     "Your Application has been accepted",
                                                                 text: "That was easy!",
                                                                 html: "<b>Hey there! </b> <br> This is our first message sent with Nodemailer<br/>",
                                                             };
-                                                            console.log(
-                                                                status,
-                                                                "¯ßðß"
-                                                            );
                                                             transporter.sendMail(
                                                                 mailData,
                                                                 function (
@@ -898,8 +894,8 @@ router.put("/applications/:id", jwtAuth, async (req, res) => {
                         });
                     } else {
                         const mailData = {
-                            from: "avipj007@gmail.com", // sender address
-                            to: "avinashprajapati914@gmail.com", // list of receivers
+                            from: "rohanshinde029@gmail.com", // sender address
+                            to: applicant.email, // list of receivers
                             subject: "Your Application has been shortlisted",
                             text: "That was easy!",
                             html: "<b>Hey there! </b> <br> This is our first message sent with Nodemailer<br/>",
